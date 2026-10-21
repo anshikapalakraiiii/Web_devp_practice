@@ -19,37 +19,43 @@ body{
     position:relative;
 }
 
-.booking-tag{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #16a34a;
-    color: white;
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+ .booking-tag{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background-color:#16a34a;
+    color:white;
+    padding:10px 22px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 
-    animation: bookingEnter 1.8s ease-out forwards;
+    animation:bookingEnter 1.5s ease-out forwards;
 }
 
 @keyframes bookingEnter{
+
     0%{
-        transform: translateX(350px);
-        opacity: 0;
+        transform:translateX(120px) scale(.8);
+        opacity:0;
     }
 
-    70%{
-        transform: translateX(-12px);
-        opacity: 1;
+    60%{
+        transform:translateX(-10px) scale(1.05);
+        opacity:1;
+    }
+
+    80%{
+        transform:translateX(5px) scale(.98);
     }
 
     100%{
-        transform: translateX(0);
-        opacity: 1;
+        transform:translateX(0) scale(1);
+        opacity:1;
     }
 }
+
 .card-container{
     display:flex;
     gap:20px;

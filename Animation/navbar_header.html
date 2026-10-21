@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>District Navbar</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#fafafa;
+    }
+
+    .navbar{
+      width:100%;
+      background:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 40px;
+      border-top:5px solid #2d2d2d;
+      position:relative;
+    }
+
+    .left{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .logo h2{
+      font-size:32px;
+      font-weight:900;
+      text-transform:lowercase;
+      color:#111;
+      line-height:28px;
+    }
+
+    .logo p{
+      font-size:10px;
+      letter-spacing:2px;
+      font-weight:bold;
+      color:#444;
+    }
+
+    .line{
+      width:2px;
+      height:42px;
+      background:#ddd;
+    }
+
+    .location{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .location i{
+      color:#6c3df4;
+      font-size:22px;
+    }
+
+    .location h4{
+      font-size:18px;
+      color:#111;
+    }
+
+    .location span{
+      font-size:14px;
+      color:#666;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:#555;
+      font-size:16px;
+      font-weight:600;
+      padding:10px 18px;
+      border-radius:25px;
+      transition:.3s;
+    }
+
+    .menu a:hover{
+      color:#6c3df4;
+    }
+
+    .menu .active{
+      background:#efe8ff;
+      color:#6c3df4;
+    }
+
+    .right{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+
+    .search{
+      color:#6c3df4;
+      font-size:22px;
+      cursor:pointer;
+    }
+
+    .profile{
+      width:42px;
+      height:42px;
+      background:#efefef;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#999;
+      font-size:18px;
+      cursor:pointer;
+    }
+
+    .menu-btn{
+      display:none;
+      color:#6c3df4;
+      font-size:24px;
+      cursor:pointer;
+    }
+
+    .bottom{
+      height:12px;
+      background:#f4edff;
+    }
+
+    @media(max-width:992px){
+
+      .navbar{
+        padding:14px 25px;
+      }
+
+      .menu{
+        gap:10px;
+      }
+
+      .menu a{
+        padding:8px 10px;
+        font-size:14px;
+      }
+
+      .location h4{
+        font-size:16px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .navbar{
+        padding:14px 18px;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .menu{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#fff;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+        box-shadow:0 6px 15px rgba(0,0,0,.1);
+      }
+
+      .menu.show{
+        display:flex;
+      }
+
+      .menu a{
+        width:100%;
+        padding:16px 20px;
+        border-radius:0;
+      }
+
+      .line{
+        display:none;
+      }
+
+      .location span{
+        display:none;
+      }
+
+      .logo h2{
+        font-size:24px;
+      }
+
+      .profile{
+        width:38px;
+        height:38px;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .navbar{
+        padding:12px 15px;
+      }
+
+      .logo h2{
+        font-size:20px;
+      }
+
+      .logo p{
+        font-size:8px;
+      }
+
+      .location h4{
+        font-size:14px;
+      }
+
+      .location i{
+        font-size:18px;
+      }
+
+      .search{
+        font-size:18px;
+      }
+
+      .profile{
+        width:34px;
+        height:34px;
+        font-size:15px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <div class="left">
+
+    <div class="logo">
+      <h2>district</h2>
+      <p>BY ZOMATO</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="location">
+      <i class="fa-solid fa-location-dot"></i>
+      <div>
+        <h4>Gurugram</h4>
+        <span>Haryana</span>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="menu" id="menu">
+    <a href="#" class="active">For you</a>
+    <a href="#">Dining</a>
+    <a href="#">Movies</a>
+    <a href="#">Events</a>
+    <a href="#">Comedy</a>
+    <a href="#">Stores</a>
+    <a href="#">Activities</a>
+    <a href="#">Play</a>
+  </nav>
+
+  <div class="right">
+    <i class="fa-solid fa-magnifying-glass search"></i>
+
+    <div class="profile">
+      <i class="fa-regular fa-user"></i>
+    </div>
+
+    <i class="fa-solid fa-bars menu-btn" id="menuBtn"></i>
+  </div>
+
+</header>
+
+<div class="bottom"></div>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
+
+  menuBtn.onclick = () => {
+    menu.classList.toggle("show");
+  };
+</script>
+
+</body>
+</html>
